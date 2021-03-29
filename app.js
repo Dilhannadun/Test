@@ -1,3 +1,5 @@
+global.fetch = require("node-fetch");
+
 console.log("Hello World");
 const os = require('os');
 
@@ -18,5 +20,11 @@ fs.readFile(fileName, (err, data) => {
 
 const data = fs.readFileSync(fileName);
 console.log(data.toString());
+
+
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(response => response.json())
+        .then(json => console.log(json))
 
 
